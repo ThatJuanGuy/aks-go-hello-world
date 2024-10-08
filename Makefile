@@ -1,8 +1,8 @@
 all:
-	# staticaly compile the go binary executable
+	# statically compile the go binary executable
 	CGO_ENABLED=0 go build ./
-	# build the imager
-	docker build -t TODO.azurecr.io/myapp:latest .
+	# build the image
+	docker build -t $(ACR_NAME).azurecr.io/myapp:latest .
 	# login to the azure container registry and upload the image
-	az acr login -n TODO
-	docker push TODO.azurecr.io/myapp:latest
+	az acr login -n $(ACR_NAME)
+	docker push $(ACR_NAME).azurecr.io/myapp:latest

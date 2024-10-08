@@ -12,7 +12,7 @@ import (
 func main() {
 	// The loop keeps the pod from exiting once it's done
 	for {
+		fmt.Println("Hello, World!")
 		time.Sleep(10 * time.Second)
-		fmt.Print("Hello, World!\n")
 	}
 }
